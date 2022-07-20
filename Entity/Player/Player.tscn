@@ -19,12 +19,14 @@ script = ExtResource( 3 )
 target = NodePath("..")
 flags = 51
 
-[node name="Animation" type="AnimatedSprite" parent="Interpolation2D"]
+[node name="Sprite" type="AnimatedSprite" parent="Interpolation2D"]
 position = Vector2( 0, -8 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 2
-playing = true
 
 [node name="DirectionChangeDelay" type="Timer" parent="."]
 wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DirectionChangeDelay" to="." method="_on_DirectionChangeDelay_timeout"]
