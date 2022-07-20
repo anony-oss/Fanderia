@@ -11,7 +11,17 @@ config_version=4
 [application]
 
 config/name="Secrets-of-Anderia"
+run/main_scene="res://Scenes/Level.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=320
+window/size/height=180
+window/size/test_width=1600
+window/size/test_height=900
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [physics]
 
