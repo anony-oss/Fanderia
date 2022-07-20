@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Background/Background_Bottom.png" type="Texture" id=1]
+[ext_resource path="res://Background/Background_Top.png" type="Texture" id=2]
+[ext_resource path="res://Background/Foreground.png" type="Texture" id=3]
+
+[node name="Background" type="Sprite"]
+position = Vector2( 73, 39 )
+region_rect = Rect2( 0, 0, 320, 180 )
+
+[node name="Background_Bottom" type="Sprite" parent="."]
+position = Vector2( 160, 90 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 24, 320, 180 )
+
+[node name="Background_Top" type="Sprite" parent="."]
+position = Vector2( 160, 90 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 180 )
+
+[node name="Foreground" type="Sprite" parent="."]
+position = Vector2( 160, 90 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, -16, 320, 180 )
