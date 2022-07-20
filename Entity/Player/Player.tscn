@@ -23,7 +23,6 @@ flags = 51
 position = Vector2( 0, -8 )
 frames = ExtResource( 1 )
 animation = "Idle"
-playing = true
 
 [node name="DirectionChangeDelay" type="Timer" parent="."]
 wait_time = 0.1
