@@ -1,21 +1,64 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Terrain/Tileset_Terrain.tres" type="TileSet" id=1]
 [ext_resource path="res://Entity/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Background/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Terrain/Grass/Tileset_Grass.tres" type="TileSet" id=4]
+[ext_resource path="res://Terrain/Objects/Tileset_Objects.tres" type="TileSet" id=5]
+[ext_resource path="res://Terrain/Objects/Lamp/Lamp.png" type="Texture" id=6]
+[ext_resource path="res://Terrain/Objects/Bonfire/Bonfire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Terrain/Objects/Wood/wood_2.png" type="Texture" id=8]
 
 [node name="Level" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
 
+[node name="Objects" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -131068, 0, 0, -131067, 0, 0, -131064, 0, 0, -131063, 0, 0, -65532, 0, 0, -65531, 0, 0, -65528, 0, 0, -65527, 0, 0, 4, 0, 0, 9, 0, 0, 131074, 0, 0, 131086, 0, 0, 196617, 0, 0, 262147, 4, 0, 262152, 2, 0, 262156, 8, 0, 262160, 4, 0, 327688, 8, 0, 393228, 1, 0, 393229, 0, 0, 524292, 7, 0, 524297, 5, 0, 524298, 6, 0, 524302, 8, 0, 524303, 536870919, 0, 524305, 2, 0 )
+
+[node name="Wood_1" type="Sprite" parent="Objects"]
+position = Vector2( 197, 136 )
+texture = ExtResource( 8 )
+
+[node name="Lamp_1" type="Sprite" parent="Objects"]
+position = Vector2( 152, 72 )
+texture = ExtResource( 6 )
+
+[node name="Lamp_2" type="Sprite" parent="Objects"]
+position = Vector2( 232, 56 )
+texture = ExtResource( 6 )
+
+[node name="Lamp_3" type="Sprite" parent="Objects"]
+position = Vector2( 136, 8 )
+texture = ExtResource( 6 )
+
+[node name="Lamp_4" type="Sprite" parent="Objects"]
+position = Vector2( 40, 56 )
+texture = ExtResource( 6 )
+
+[node name="Lamp_5" type="Sprite" parent="Objects"]
+position = Vector2( 104, 120 )
+texture = ExtResource( 6 )
+
+[node name="Lamp_6" type="Sprite" parent="Objects"]
+position = Vector2( 216, 104 )
+texture = ExtResource( 6 )
+
+[node name="Bonfire" parent="Objects" instance=ExtResource( 7 )]
+position = Vector2( 128, 88 )
+frame = 5
+
 [node name="Grass" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 65542, 7, 0, 65543, 3, 0, 65545, 6, 0, 131074, 1073741825, 0, 131087, 1073741825, 0, 131088, 1073741829, 0, 196617, 1073741824, 0, 262146, 2, 0, 262147, 536870916, 0, 262150, 1073741835, 0, 262152, 1073741826, 0, 262160, 7, 0, 262161, 536870921, 0, 327686, 6, 0, 327687, 8, 0, 327689, 2, 0, 393228, 1073741830, 0, 393229, 1610612736, 0, 458752, 1073741835, 0, 458755, 1073741825, 0, 458761, 1073741829, 0, 524288, 5, 0, 524289, 9, 0, 524290, 8, 0, 524292, 536870912, 0, 524293, 10, 0, 524294, 7, 0, 524295, 1073741835, 0, 524296, 2, 0, 524297, 4, 0, 524299, 12, 0, 524300, 3, 0, 524301, 10, 0 )
+tile_data = PoolIntArray( 3, -1610612724, 0, 65542, 7, 0, 65543, 3, 0, 65545, 6, 0, 65549, -1073741813, 0, 131074, 1073741825, 0, 131077, -1073741822, 0, 131086, 1610612738, 0, 131087, 1073741825, 0, 131088, 1073741829, 0, 196610, -1610612730, 0, 196617, 1073741824, 0, 196625, -1073741813, 0, 262146, 2, 0, 262147, 536870916, 0, 262150, 1073741835, 0, 262152, 1073741826, 0, 262157, 8, 0, 262160, 7, 0, 262161, 536870921, 0, 327684, -1610612730, 0, 327686, 6, 0, 327687, 8, 0, 327689, 2, 0, 393228, 1073741830, 0, 393229, 1610612736, 0, 393231, -1073741818, 0, 458752, 1073741835, 0, 458755, 1073741825, 0, 458761, 1073741829, 0, 458770, 1073741835, 0, 458771, 1610612738, 0, 524288, 5, 0, 524289, 9, 0, 524290, 8, 0, 524292, 536870912, 0, 524293, 10, 0, 524294, 7, 0, 524295, 1073741835, 0, 524296, 2, 0, 524297, 4, 0, 524299, 12, 0, 524300, 3, 0, 524301, 10, 0, 524303, 7, 0, 524304, 6, 0, 524306, 4, 0, 524307, 536870912, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 169, 144 )
