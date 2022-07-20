@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const MOVEMENT_SPEED = 4500
-const GRAVITY_SCALE = 700
+const MOVEMENT_SPEED = 4750
+const GRAVITY_SCALE = 1000
 const JUMP_FORCE = 17000
 
 var canChangeDirection := true
