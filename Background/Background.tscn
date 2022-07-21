@@ -12,16 +12,16 @@ region_rect = Rect2( 0, 0, 320, 180 )
 position = Vector2( 160, 90 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 24, 320, 180 )
+region_rect = Rect2( 0, 16, 320, 180 )
 
 [node name="Background_Top" type="Sprite" parent="."]
 position = Vector2( 160, 90 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 320, 180 )
+region_rect = Rect2( 0, -12, 320, 180 )
 
 [node name="Foreground" type="Sprite" parent="."]
 position = Vector2( 160, 90 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, -16, 320, 180 )
+region_rect = Rect2( 0, -32, 320, 180 )
