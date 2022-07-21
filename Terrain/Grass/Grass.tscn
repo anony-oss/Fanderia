@@ -1,0 +1,257 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Terrain/Grass/Tilemap_Grass.png" type="Texture" id=1]
+[ext_resource path="res://Terrain/Grass/Grass.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.0
+} ]
+
+[sub_resource type="Animation" id=18]
+resource_name = "Rocking Left"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D/Bone1/Bone2:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1, 2 ),
+"update": 0,
+"values": [ 0.0, -3.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Rocking Right"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D/Bone1/Bone2:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1, 2 ),
+"update": 0,
+"values": [ 0.0, 3.0, 0.0 ]
+}
+
+[node name="Grass" type="AnimatedSprite"]
+frames = SubResource( 15 )
+offset = Vector2( 0, -8 )
+script = ExtResource( 2 )
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Bone1" type="Bone2D" parent="Skeleton2D"]
+rotation = -1.57079
+rest = Transform2D( 6.27438e-06, -1, 1, 6.27438e-06, 0, 0 )
+default_length = 2.0
+
+[node name="Bone2" type="Bone2D" parent="Skeleton2D/Bone1"]
+position = Vector2( 2, -1.2517e-05 )
+rest = Transform2D( 1, 0, 0, 1, 2, -4.41074e-06 )
+default_length = 10.0
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite1" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -8, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+uv = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite2" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite3" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 32, 0, 48, 0, 48, 16, 32, 16 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite4" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 48, 0, 64, 0, 64, 16, 48, 16 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite5" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 64, 0, 80, 0, 80, 16, 64, 16 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite6" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 80, 0, 96, 0, 96, 16, 80, 16 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite7" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 96, 0, 112, 0, 112, 16, 96, 16 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite8" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 3.8147e-06, 16, 16, 16, 16, 32, 3.8147e-06, 32 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite9" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 16, 16, 32, 16, 32, 32, 16, 32 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite10" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 32, 16, 48, 16, 48, 32, 32, 32 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite11" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 48, 16, 64, 16, 64, 32, 48, 32 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite12" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 64, 16, 80, 16, 80, 32, 64, 32 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Sprite13" type="Polygon2D" parent="Sprites"]
+visible = false
+position = Vector2( -24, -16 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 0, 32, 0, 32, 16, 16, 16 )
+uv = PoolVector2Array( 80, 16, 96, 16, 96, 32, 80, 32 )
+bones = [ "Bone1", PoolRealArray( 0, 0, 0, 0 ), "Bone1/Bone2", PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="LeftTrigger" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftTrigger"]
+visible = false
+polygon = PoolVector2Array( 0, 0, 0, -11, -8, 0 )
+
+[node name="RightTrigger" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightTrigger"]
+visible = false
+polygon = PoolVector2Array( 0, 0, 0, -11, 8, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Rocking Left" = SubResource( 18 )
+"anims/Rocking Right" = SubResource( 19 )
+
+[connection signal="body_entered" from="LeftTrigger" to="." method="_on_LeftTrigger_body_entered"]
+[connection signal="body_entered" from="RightTrigger" to="." method="_on_RightTrigger_body_entered"]
