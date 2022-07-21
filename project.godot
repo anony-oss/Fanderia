@@ -22,7 +22,12 @@ _global_script_class_icons={
 
 config/name="Secrets-of-Anderia"
 run/main_scene="res://Scenes/Level.tscn"
-config/icon="res://icon.png"
+config/icon="res://Icon.png"
+config/windows_native_icon="res://Icon.ico"
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 
@@ -47,4 +52,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.117647, 0.117647, 0.117647, 1 )
 environment/default_environment="res://default_env.tres"
