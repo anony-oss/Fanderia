@@ -108,7 +108,6 @@ texture = ExtResource( 6 )
 
 [node name="Bonfire" parent="Objects" instance=ExtResource( 7 )]
 position = Vector2( 112, 104 )
-frame = 2
 
 [node name="Grass" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )

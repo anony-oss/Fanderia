@@ -22,7 +22,8 @@ _global_script_class_icons={
 
 config/name="Secrets-of-Anderia"
 run/main_scene="res://Scenes/Level.tscn"
-config/icon="res://icon.png"
+config/icon="res://Icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [debug]
 
